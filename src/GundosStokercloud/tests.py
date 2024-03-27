@@ -1,7 +1,7 @@
 import json
 import pytest
 
-from stokercloud.controller_data import ControllerData, PowerState, NotConnectedException, Unit, Value, State
+from GundosStokercloud.controller_data import ControllerData, PowerState, NotConnectedException, Unit, Value, State
 
 
 def test_controller_data():

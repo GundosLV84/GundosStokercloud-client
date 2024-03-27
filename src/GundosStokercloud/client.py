@@ -4,7 +4,7 @@ from urllib import request
 from urllib.parse import urljoin
 import logging
 import time
-from stokercloud.controller_data import ControllerData
+from GundosStokercloud.controller_data import ControllerData
 
 logger = logging.getLogger(__name__)
 
