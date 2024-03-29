@@ -29,8 +29,7 @@ class Client:
         with request.urlopen(
                 urljoin(
                     self.BASE_URL,
-                    'v2/dataout2/login.php?user=%s' % self.name,
-                    '&screen=%s' % self.QUERY_SCREEN
+                    'v2/dataout2/login.php?user=%s' % self.name
                 )
         ) as response:
             data = json.loads(response.read())
@@ -43,7 +42,8 @@ class Client:
                 raise TokenInvalid()
             absolute_url = urljoin(
                 self.BASE_URL,
-                "%s?token=%s" % (url, self.token)
+                "%s?token=%s" % (url, self.token),
+                "%s&screen=%s" % self.QUERY_SCREEN
             )
             logger.debug(absolute_url)
             with request.urlopen(absolute_url) as data:
