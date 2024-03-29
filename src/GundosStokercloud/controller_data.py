@@ -125,12 +125,12 @@ class ControllerData:
     
     @property
     def hopper_content(self):
-        return Value(self.get_sub_item('hopperdata', 'hoppercontent')['value'], Unit.KILO_GRAM)
+        return Value(self.get_sub_item('frontdata', 'hoppercontent')['value'], Unit.KILO_GRAM)
     
     @property
     def wanted_o2(self):
-        return Value(self.get_sub_item('hopperdata', 'refoxygen')['value'], Unit.PERCENT)
+        return Value(self.get_sub_item('frontdata', 'refoxygen')['value'], Unit.PERCENT)
 
     @property
     def wanted_air(self):
-        return Value(self.get_sub_item('hopperdata', 'refair')['value'], Unit.M3HOUR)
+        return Value(self.get_sub_item('frontdata', 'refair')['value'], Unit.M3HOUR)
