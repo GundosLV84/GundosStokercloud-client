@@ -138,11 +138,11 @@ class ControllerData:
     
     @property
     def backpressure(self):
-        return STATE_BY_VALUE.get(self.data['miscdata']['backpressure'], Unit.PASCAL)
+        return self.get(self.data['miscdata']['backpressure'], Unit.PASCAL)
     
     @property
     def exhaust_fan(self):
-        return STATE_BY_VALUE.get(self.data['leftoutput']['output-5']['val'], Unit.PERCENT)
+        return self.get(self.data['leftoutput']['output-5']['val'], Unit.PERCENT)
     
     @property
     def photosensor(self):
