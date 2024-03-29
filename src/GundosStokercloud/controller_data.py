@@ -147,3 +147,15 @@ class ControllerData:
     @property
     def exhaust_fan(self):
         return self.data['leftoutput']['output-5']['val']
+    
+    @property
+    def dropshaft_temp(self):
+        return Value(self.get_sub_item('boilerdata', '7')['value'], Unit.DEGREE)
+    
+    @property
+    def pressure(self):
+        return Value(self.get_sub_item('boilerdata', '24')['value'], Unit.PASCAL)
+    
+    @property
+    def fan_speed(self):
+        return Value(self.get_sub_item('boilerdata', '25')['value'], Unit.PERCENT)
