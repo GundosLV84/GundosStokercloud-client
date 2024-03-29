@@ -137,13 +137,13 @@ class ControllerData:
         return Value(self.get_sub_item('frontdata', 'refair')['value'], Unit.M3HOUR)
     
     @property
+    def photosensor(self):
+        return Value(self.get_sub_item('boilerdata', '6')['value'], Unit.PERCENT)
+    
+    @property
     def backpressure(self):
-        return self.get(self.data['miscdata']['backpressure'], Unit.PASCAL)
+        return self.get(self.data['miscdata']['backpressure'])
     
     @property
     def exhaust_fan(self):
-        return self.get(self.data['leftoutput']['output-5']['val'], Unit.PERCENT)
-    
-    @property
-    def photosensor(self):
-        return Value(self.get_sub_item('boilerdata', '6')['value'], Unit.PERCENT)
+        return self.get(self.data['leftoutput']['output-5']['val'])
