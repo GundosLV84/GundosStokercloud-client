@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="GundosStokercloud-client",
-    version="0.0.8",
+    version="0.0.9",
     author="GundosLV84",
     author_email="till84@gmail.com",
     description="Python stokercloud client modified",
