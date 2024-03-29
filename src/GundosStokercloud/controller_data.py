@@ -17,6 +17,7 @@ class Unit(Enum):
     DEGREE = 'deg'
     KILO_GRAM = 'kg'
     GRAM = 'g'
+    M3HOUR = 'm3/h'
 
 
 class State(Enum):
@@ -80,7 +81,7 @@ class ControllerData:
 
     @property
     def boiler_temperature_current(self):
-        return Value(self.get_sub_item('frontdata', 'boilertemp')['value'], Unit.DEGREE)\
+        return Value(self.get_sub_item('frontdata', 'boilertemp')['value'], Unit.DEGREE)
 
     @property
     def boiler_temperature_requested(self):
@@ -113,3 +114,23 @@ class ControllerData:
     @property
     def boiler_powerPrc(self):
         return Value(self.get_sub_item('boilerdata', '4')['value'], Unit.PERCENT)
+    
+    @property
+    def boiler_returntemp(self):
+        return Value(self.get_sub_item('boilerdata', '3')['value'], Unit.DEGREE)
+    
+    @property
+    def boiler_actualo2(self):
+        return Value(self.get_sub_item('boilerdata', '12')['value'], Unit.PERCENT)
+    
+    @property
+    def hopper_content(self):
+        return Value(self.get_sub_item('hopperdata', 'hoppercontent')['value'], Unit.KILO_GRAM)
+    
+    @property
+    def wanted_o2(self):
+        return Value(self.get_sub_item('hopperdata', 'refoxygen')['value'], Unit.PERCENT)
+
+    @property
+    def wanted_air(self):
+        return Value(self.get_sub_item('hopperdata', 'refair')['value'], Unit.M3HOUR)
