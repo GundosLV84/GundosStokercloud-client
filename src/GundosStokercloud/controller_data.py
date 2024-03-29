@@ -18,6 +18,7 @@ class Unit(Enum):
     KILO_GRAM = 'kg'
     GRAM = 'g'
     M3HOUR = 'm3/h'
+    PASCAL = 'Pa'
 
 
 class State(Enum):
@@ -134,3 +135,15 @@ class ControllerData:
     @property
     def wanted_air(self):
         return Value(self.get_sub_item('frontdata', 'refair')['value'], Unit.M3HOUR)
+    
+    @property
+    def backpressure(self):
+        return STATE_BY_VALUE.get(self.data['miscdata']['backpressure'], Unit.PASCAL)
+    
+    @property
+    def exhaust_fan(self):
+        return STATE_BY_VALUE.get(self.data['leftoutput']['output-5']['val'], Unit.PERCENT)
+    
+    @property
+    def photosensor(self):
+        return Value(self.get_sub_item('boilerdata', '6')['value'], Unit.PERCENT)
