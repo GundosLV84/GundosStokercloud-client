@@ -159,3 +159,7 @@ class ControllerData:
     @property
     def fan_speed(self):
         return Value(self.get_sub_item('boilerdata', '25')['value'], Unit.PERCENT)
+    
+    @property
+    def debug_json(self):
+        return self.data
