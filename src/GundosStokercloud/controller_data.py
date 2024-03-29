@@ -142,8 +142,8 @@ class ControllerData:
     
     @property
     def backpressure(self):
-        return STATE_BY_VALUE.get(self.data['miscdata']['backpressure'])
+        return self.data['miscdata']['backpressure']
     
     @property
     def exhaust_fan(self):
-        return STATE_BY_VALUE.get(self.data['leftoutput']['output-5']['val'])
+        return self.data['leftoutput']['output-5']['val']
