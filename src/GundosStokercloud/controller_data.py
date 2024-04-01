@@ -161,5 +161,5 @@ class ControllerData:
         return Value(self.get_sub_item('boilerdata', '25')['value'], Unit.PERCENT)
     
     @property
-    def debug_json(self):
-        return self.data
+    def boiler_returntemp17(self):
+        return Value(self.get_sub_item('boilerdata', '17')['value'], Unit.DEGREE)
