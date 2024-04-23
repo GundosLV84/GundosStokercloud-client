@@ -146,7 +146,7 @@ class ControllerData:
     
     @property
     def exhaust_fan(self):
-        return self.data['leftoutput']['output-5']['val']
+        return Value(self.data['leftoutput']['output-5']['val'], Unit.PERCENT)
     
     @property
     def dropshaft_temp(self):
